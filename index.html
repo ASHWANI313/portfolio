@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwani Kumar - DevOps Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+            overflow: hidden;
+            border: 5px solid white;
+            position: relative;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .skill-category p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .experience-item {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .company {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .position {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .duration {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #667eea;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: #888;
+            font-style: italic;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: rotateY(5deg) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #f093fb;
+        }
+
+        .degree {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .institution {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .project-item {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .hobby-item {
+            background: linear-gradient(135deg, #96fbc4 0%, #f9f586 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .hobby-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="profile-img">
+                <img src="data:image/jpeg;base64,${await (async () => {
+                    try {
+                        const imageData = await window.fs.readFile('image.jpg');
+                        return btoa(String.fromCharCode(...imageData));
+                    } catch (error) {
+                        console.error('Error loading image:', error);
+                        return '';
+                    }
+                })()} " alt="Ashwani Kumar Profile" onerror="this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:48px;color:white;font-weight:bold;border-radius:50%;&quot;>AK</div>'"/>
+            </div>
+            <h1>Ashwani Kumar</h1>
+            <p class="subtitle">DevOps Engineer | Cloud Infrastructure Specialist | GCP Certified</p>
+            <div class="contact-info">
+                <a href="tel:+917992463605" class="contact-item">
+                    📞 +91 7992463605
+                </a>
+                <a href="mailto:ashwani.sonu1234@gmail.com" class="contact-item">
+                    ✉️ ashwani.sonu1234@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/aksr23" target="_blank" class="contact-item">
+                    💼 LinkedIn
+                </a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Professional Profile</h2>
+            <p class="summary">
+                DevOps Engineer with 5+ years delivering infrastructure automation, platform reliability, and secure CI/CD pipelines using Terraform, Kubernetes, Jenkins, and GitLab/GitHub. Expert in incident response, performance tuning, secrets management (Vault/IAM), and collaborative problem-solving. Proven ability to drive strategic planning, SRE best practices, and communication across technical teams in regulated environments.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Top Skills & Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🌟 Top Skills</h3>
+                    <p>Google Cloud Platform (GCP), Continuous Integration and Continuous Delivery (CI/CD), Agile Application Development</p>
+                </div>
+                <div class="skill-category">
+                    <h3>💻 Programming & Scripting</h3>
+                    <p>Python, JSON, Bash scripting, API development and integration</p>
+                </div>
+                <div class="skill-category">
+                    <h3>☁️ Cloud Platforms</h3>
+                    <p>GCP (Certified), Azure (exposure), HPC systems, Terraform, Kubernetes, Helm, Vault</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🔒 Cloud Governance & Security</h3>
+                    <p>IAM Policies, Identity & Access Management, Certificate Management, Encryption, Cloud Security Automation</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🔄 CI/CD & Infrastructure</h3>
+                    <p>Jenkins, Infrastructure as Code (Terraform, Helm), Docker, Kubernetes, ArgoCD, GitLab</p>
+                </div>
+                <div class="skill-category">
+                    <h3>📊 Monitoring & Observability</h3>
+                    <p>Prometheus, Grafana, Dynatrace, SLIs/SLOs, Error Budgets, MTTR optimization</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🤝 Collaboration & Management</h3>
+                    <p>Agile (Scrum), Jira, Confluence, Incident Management, Post-mortem Reviews, SDLC</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🔐 Secrets Management</h3>
+                    <p>HashiCorp Vault, AWS Secrets Manager, Dynamic secrets rotation, Access control</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🧪 QA & Testing</h3>
+                    <p>API Testing, Selenium, Log Debugging, Quality Metrics, UAT, Functional and Regression Testing</p>
+                </div>
+                <div class="skill-category">
+                    <h3>📈 Data & Analytics</h3>
+                    <p>Pattern Recognition, Data Analysis, Data Analytics, Data Science, Data Visualization, Fraud Detection, Artificial Intelligence (AI), Data Intelligence, SQL</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🏗️ Big Data & Frameworks</h3>
+                    <p>Django, Scala and Spark, Big Data Processing, Machine Learning, IoT Systems</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="company">Lloyds Banking Group</div>
+                <div class="position">DevOps Engineer</div>
+                <div class="duration">June 2024 - Present</div>
+                <div class="location">Leeds, England, United Kingdom</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Timpson's Group</div>
+                <div class="position">Consultant</div>
+                <div class="duration">2023</div>
+                <div class="location">Birmingham, England, United Kingdom</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Virgin Money</div>
+                <div class="position">Consultant</div>
+                <div class="duration">2023</div>
+                <div class="location">Birmingham, England, United Kingdom</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Aston Cybersecurity Innovation Centre</div>
+                <div class="position">Intern</div>
+                <div class="duration">June 2023 - August 2023</div>
+                <div class="location">Birmingham, England, United Kingdom</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Wipro Limited</div>
+                <div class="position">Senior Project Engineer</div>
+                <div class="duration">April 2019 - September 2022</div>
+                <div class="location">Hyderabad, Telangana, India</div>
+            </div>
+        </section>
+
+
+
+        <section class="section">
+            <h2>Education & Qualifications</h2>
+            
+            <div class="education-item">
+                <div class="degree">Master of Business Administration (MBA)</div>
+                <div class="institution">Aston University</div>
+                <div class="duration">September 2022 - September 2023</div>
+                <p><strong>Business Excellence Scholarship Recipient</strong><br>
+                Core Courses: Finance, Operations, Strategic Thinking, Corporate Social Responsibility, and Cybersecurity Risk Management</p>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Summer Exchange Program</div>
+                <div class="institution">Universidad de los Andes</div>
+                <div class="duration">May 2023 - July 2023</div>
+                <p>Core Courses: Digital Technologies and Business Strategies, Entrepreneurial Growth, and International Negotiation</p>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Bachelor of Technology</div>
+                <div class="institution">Kalinga Institute of Industrial Technology, Bhubaneswar</div>
+                <div class="duration">July 2015 - April 2019</div>
+                <p>Electronics and Electrical Engineering | CGPA: 8.34</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Certifications & Licenses</h2>
+            <div class="certifications-grid">
+                <div class="cert-item">
+                    <h3>☁️ Associate Cloud Engineer</h3>
+                    <p>Google | Nov 2024 - Nov 2027</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🌐 Cloud Digital Leader</h3>
+                    <p>Google | Oct 2024 - Oct 2027</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🤖 AI & ML on Google Cloud</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>⚖️ Compliance & Operations</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🔄 Digital Transformation</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>📚 Google Cloud Concepts</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🏗️ Managing Infrastructure</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>📱 Modern Applications</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🌐 Networks on Google Cloud</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🛡️ Trust & Security</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>📊 Working with Data</h3>
+                    <p>Skillsoft | Oct 2024</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🐍 Python and Django Bootcamp</h3>
+                    <p>Udemy | Jan 2021</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🔍 Python Data Structures</h3>
+                    <p>Udemy | Jan 2021</p>
+                </div>
+                <div class="cert-item">
+                    <h3>⚡ Scala and Spark</h3>
+                    <p>Udemy | Jan 2021</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🐍 Complete Python Bootcamp</h3>
+                    <p>Udemy | Apr 2020</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🤖 Machine Learning</h3>
+                    <p>Katallyst | May 2018</p>
+                </div>
+                <div class="cert-item">
+                    <h3>🌐 IoT Certification</h3>
+                    <p>Netmax | Jul 2017</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Hobbies & Volunteer Work</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-item">
+                    <h3>🚀 Tech Community</h3>
+                    <p>Active in tech meetups and cybersecurity workshops to stay updated with industry trends</p>
+                </div>
+                <div class="hobby-item">
+                    <h3>📚 Education & Mentoring</h3>
+                    <p>Tutor underprivileged students in math and computer skills, fostering community engagement and knowledge sharing</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interactive elements
+        // Load profile image
+        async function loadProfileImage() {
+            try {
+                const imageData = await window.fs.readFile('image.jpg');
+                const base64 = btoa(String.fromCharCode(...imageData));
+                const img = document.querySelector('.profile-img img');
+                if (img) {
+                    img.src = `data:image/jpeg;base64,${base64}`;
+                }
+            } catch (error) {
+                console.error('Error loading profile image:', error);
+                // Fallback to initials if image fails to load
+                const profileDiv = document.querySelector('.profile-img');
+                profileDiv.innerHTML = '<div style="width:100%;height:100%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:48px;color:white;font-weight:bold;border-radius:50%;">AK</div>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load profile image
+            loadProfileImage();
+            // Animate skill categories on hover
+            const skillCategories = document.querySelectorAll('.skill-category');
+            skillCategories.forEach(category => {
+                category.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                category.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add click effect to contact items
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections for scroll animations
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.6s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
